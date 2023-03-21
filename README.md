@@ -19,7 +19,7 @@
 ## Usage
 `python3 apollo.py {gather_macos, gather_ios} <modules directory> <data directory> --ignore <dir>`
 
-`python3 apollo.py extract -o {csv, sql, sql_json} -p {apple, android, windows, yolo} -v {8,9,10,11,12,13,14,10.13,10.14,10.15,10.16,and9,and10,and11,win10_1803,win10_1809,win10_1903,win10_1909,yolo} -k <modules directory> <data directory>`
+`python3 apollo.py {extract, extractzip} -o {csv, sql, sql_json} -p {apple, android, windows, yolo} -v {8,9,10,11,12,13,14,10.13,10.14,10.15,10.16,and9,and10,and11,win10_1803,win10_1809,win10_1903,win10_1909,yolo} -k <modules directory> <data directory>`
 
 ## Output Options (-o)
 * `csv` - CSV (Tab Delimited)
@@ -38,7 +38,7 @@
 * `yolo` - Just parse whatever. Will use all available queries. Be careful with this option as you may get redundant data. 
 
 ## Version Options (-v)
-* iOS `8`, `9`, `10`, `11`, `12`,`13`,`14`
+* iOS `8`, `9`, `10`, `11`, `12`,`13`,`14`,`15`
 * macOS `10.13`, `10.14`, `10.15`,`10.16` (macOS 11)
 * Android `and8`, `and9`, `and10`
 * Windows 10 `win10_1803`, `win10_1809`, `win10_1903`, `win10_1909`
