@@ -63,14 +63,14 @@ MODULE_NOTES=Does the iPhone see the Apple Watch nearby.
 [Database Metadata]
 DATABASE=knowledgeC.db
 PLATFORM=IOS
-VERSIONS=11
+VERSIONS=11,15
 
 [Query Metadata]
 QUERY_NAME=knowledge_device_watch_nearby
 ACTIVITY=Watch Nearby Status
 KEY_TIMESTAMP=START
 
-[SQL Query 11]
+[SQL Query 11,15]
 QUERY=
    SELECT
       DATETIME(ZOBJECT.ZSTARTDATE+978307200,'UNIXEPOCH') AS "START", 

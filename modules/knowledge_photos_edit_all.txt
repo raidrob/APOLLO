@@ -63,14 +63,14 @@ MODULE_NOTES=Photos Edit All
 [Database Metadata]
 DATABASE=knowledgeC.db
 PLATFORM=IOS
-VERSIONS=13,14
+VERSIONS=13,14,15
 
 [Query Metadata]
 QUERY_NAME=knowledge_photos_edit_all
 ACTIVITY=Photos Edit All
 KEY_TIMESTAMP=START
 
-[SQL Query 13,14]
+[SQL Query 13,14,15]
 QUERY=
    SELECT
       DATETIME(ZOBJECT.ZSTARTDATE+978307200,'UNIXEPOCH') AS "START", 

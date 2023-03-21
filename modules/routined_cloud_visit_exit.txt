@@ -63,14 +63,14 @@ MODULE_NOTES=Significant Locations - Vist Exit (Historical)
 [Database Metadata]
 DATABASE=Cloud.sqlite,Cloud-V2.sqlite
 PLATFORM=IOS
-VERSIONS=11,12,13,14
+VERSIONS=11,12,13,14,15
 
 [Query Metadata]
 QUERY_NAME=routined_cloud_visit_exit
 ACTIVITY=Routined Location - Visit Exit
 KEY_TIMESTAMP=VISIT EXIT
 
-[SQL Query 13,14]
+[SQL Query 13,14,15]
 QUERY=
    SELECT
       DATETIME(ZRTLEARNEDVISITMO.ZENTRYDATE + 978307200, 'UNIXEPOCH') AS "VISIT ENTRY",

@@ -63,14 +63,14 @@ MODULE_NOTES=Charging - Smart Topoff Checkpoint
 [Database Metadata]
 DATABASE=knowledgeC.db
 PLATFORM=IOS,MACOS
-VERSIONS=13,14,10.16
+VERSIONS=13,14,10.16,15
 
 [Query Metadata]
 QUERY_NAME=knowledge_charging_smart_topoff_checkpoint
 ACTIVITY=Charging - Smart Topoff Checkpoint
 KEY_TIMESTAMP=START
 
-[SQL Query 13,14,10.16]
+[SQL Query 13,14,10.16,15]
 QUERY=
    SELECT
       DATETIME(ZOBJECT.ZSTARTDATE+978307200,'UNIXEPOCH') AS "START", 

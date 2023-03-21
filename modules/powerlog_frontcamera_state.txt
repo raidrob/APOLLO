@@ -63,12 +63,56 @@ MODULE_NOTES=Records when front camera is in use.
 [Database Metadata]
 DATABASE=CurrentPowerlog.PLSQL
 PLATFORM=IOS
-VERSIONS=9
+VERSIONS=9,15
 
 [Query Metadata]
 QUERY_NAME=powerlog_frontcamera_state
 ACTIVITY=Front Camera Status
 KEY_TIMESTAMP=ADJUSTED_TIMESTAMP
+
+[SQL Query 15]
+QUERY=
+   SELECT
+      DATETIME(CAMERA_TIMESTAMP + SYSTEM, 'UNIXEPOCH') AS ADJUSTED_TIMESTAMP,
+      BUNDLEID AS BUNDLE_ID,
+      CASE STATE
+         WHEN "0" THEN "OFF"
+         WHEN "1" THEN "ON"
+      END AS STATE,
+      DATETIME(CAMERA_TIMESTAMP, 'UNIXEPOCH') AS ORIGINAL_CAMERA_TIMESTAMP,
+      DATETIME(TIME_OFFSET_TIMESTAMP, 'UNIXEPOCH') AS OFFSET_TIMESTAMP,
+      SYSTEM AS TIME_OFFSET,
+      CAMERA_ID AS "PLCAMERAAGENT_EVENTFORWARD_FRONTCAMERA TABLE ID"
+   FROM
+      (
+      SELECT
+         BUNDLEID,
+         CAMERA_ID,
+         CAMERA_TIMESTAMP,
+         TIME_OFFSET_TIMESTAMP,
+         MAX(TIME_OFFSET_ID) AS MAX_ID,
+         SYSTEM,
+         STATE
+      FROM
+         (
+         SELECT		 
+            PLCameraAgent_EventForward_Camera.TIMESTAMP AS CAMERA_TIMESTAMP,
+            PLCameraAgent_EventForward_Camera.BUNDLEID,
+            PLCameraAgent_EventForward_Camera.STATE,
+            PLCameraAgent_EventForward_Camera.ID AS "CAMERA_ID",
+            PLStorageOperator_EventForward_TimeOffset.TIMESTAMP AS TIME_OFFSET_TIMESTAMP,
+            PLStorageOperator_EventForward_TimeOffset.ID AS TIME_OFFSET_ID,
+            PLStorageOperator_EventForward_TimeOffset.SYSTEM,
+            BUNDLEID 
+         FROM
+            PLCameraAgent_EventForward_Camera 
+         LEFT JOIN
+            PLSTORAGEOPERATOR_EVENTFORWARD_TIMEOFFSET  
+            )
+            AS CAMERASTATE 
+         GROUP BY
+            CAMERA_ID 
+      )
 
 [SQL Query 9]
 QUERY=

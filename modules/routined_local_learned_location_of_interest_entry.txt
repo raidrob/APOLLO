@@ -63,14 +63,14 @@ MODULE_NOTES=Significant Locations - Location of Interest Entry (Historical)
 [Database Metadata]
 DATABASE=Local.sqlite
 PLATFORM=IOS
-VERSIONS=11,12,13,14
+VERSIONS=11,12,13,14,15
 
 [Query Metadata]
 QUERY_NAME=routined_local_learned_location_of_interest_entry
 ACTIVITY=Routined Location - Learned Location of Interest Entry
 KEY_TIMESTAMP=ENTRY
 
-[SQL Query 14]
+[SQL Query 14,15]
 QUERY=
 	SELECT
 	   DATETIME(ZRTLEARNEDLOCATIONOFINTERESTVISITMO.ZENTRYDATE + 978307200, 'UNIXEPOCH') AS "ENTRY",

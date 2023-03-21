@@ -63,14 +63,14 @@ MODULE_NOTES=DASD Activity Profile
 [Database Metadata]
 DATABASE=knowledgeC.db
 PLATFORM=IOS
-VERSIONS=14
+VERSIONS=14,15
 
 [Query Metadata]
 QUERY_NAME=knowledge_dasd_activity_profile
 ACTIVITY=DASD Activity Profile
 KEY_TIMESTAMP=START
 
-[SQL Query 14]
+[SQL Query 14,15]
 QUERY=
    SELECT
       DATETIME(ZOBJECT.ZSTARTDATE+978307200,'UNIXEPOCH') AS "START", 

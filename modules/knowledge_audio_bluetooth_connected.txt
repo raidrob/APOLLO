@@ -63,14 +63,14 @@ MODULE_NOTES=Audio Bluetooth Connections
 [Database Metadata]
 DATABASE=knowledgeC.db
 PLATFORM=IOS,MACOS
-VERSIONS=11,12,13,14,10.16
+VERSIONS=11,12,13,14,10.16,15
 
 [Query Metadata]
 QUERY_NAME=knowledge_audio_bluetooth_connected
 ACTIVITY=Bluetooth Connected
 KEY_TIMESTAMP=START
 
-[SQL Query 11,12,13,14,10.16]
+[SQL Query 11,12,13,14,10.16,15]
 QUERY=
    SELECT
       DATETIME(ZOBJECT.ZSTARTDATE+978307200,'UNIXEPOCH') AS "START", 
